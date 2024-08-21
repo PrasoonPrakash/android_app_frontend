@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       });
     }
     setState(() {
-      stc = response.statusCode;
+      stc1 = response.statusCode;
     });
   }
 

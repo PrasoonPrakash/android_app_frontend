@@ -7,8 +7,10 @@ const Items=[
   RecordsPage(),
 ];
 
-int stc=0;
+int stc1=0;
+int stc2=0;
 
 var name="";
 
 String? answer=" ";
+String? prediction=" ";

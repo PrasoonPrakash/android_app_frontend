@@ -70,7 +70,7 @@ class _SpeechRecordPageState extends State<SpeechRecordPage> {
       });
     }
     setState(() {
-      stc = response.statusCode;
+      stc1 = response.statusCode;
     });
   }
 

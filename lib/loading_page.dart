@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'package:aanchal_ai/global_vars.dart';
 import 'package:aanchal_ai/prediction.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class _LoadingPageState extends State<LoadingPage> {
 
   void startTimer() {
     _timer = Timer.periodic(Duration(seconds: 1), (Timer t) async {
-      if (stc == 200) {
+      if (stc1 == 200) {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => ResultsPage()),
@@ -41,7 +42,7 @@ class _LoadingPageState extends State<LoadingPage> {
         final decoded = json.decode(nameVar.body) as Map<String, dynamic>;
         setState(() {
           name = decoded["name"];
-          stc=0;
+          stc1=0;
         });
         return;
       }
@@ -67,7 +68,8 @@ class _LoadingPageState extends State<LoadingPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SpinKitRing(color: Colors.red, size: 80),
+              // SpinKitRing(color: Colors.red, size: 80),
+              LinearProgressIndicator(),
               SizedBox(
                 height: 20,
               ),
