@@ -134,8 +134,6 @@ def generateHindi(audio_file_path,name):
         try:
             transcript = transcribe(audio_file_path)
 
-            # #aai.settings.api_key = "42906185b53b4fb180376d15b40d8f06"
-            # aai.settings.api_key = "e7965528d42e418fa3e74b523b235ee2"
             # audio_url = audio_file_path
             # print(audio_url)
             # config = aai.TranscriptionConfig(language_code='hi')
