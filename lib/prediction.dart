@@ -18,7 +18,7 @@ class ResultsPage extends StatefulWidget {
 
 class _ResultsPageState extends State<ResultsPage> {
   String text = " ";
-  String text2 = answer!;
+  String text2 = " ";
   //String translation = " ";
   bool fp = false;
   List<List<dynamic>> _data = [];
@@ -60,9 +60,9 @@ class _ResultsPageState extends State<ResultsPage> {
     if (response.statusCode == 200) {
       File file = File(savePath);
       await file.writeAsBytes(response.bodyBytes);
-      print('File downloaded successfully');
-    } else {
-      print('Failed to download file: ${response.statusCode}');
+      text='File downloaded successfully';
+    } else{
+      text='Failed to download file: ${response.statusCode}';
     }
   }
 

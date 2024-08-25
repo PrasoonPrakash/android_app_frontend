@@ -4,6 +4,7 @@ import 'package:aanchal_ai/conv.dart';
 import 'package:aanchal_ai/global_vars.dart';
 import 'package:aanchal_ai/layout.dart';
 import 'package:aanchal_ai/loading_page.dart';
+import 'package:aanchal_ai/prediction.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       //final File fileForName = File(file.path!);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => LoadingPage()),
+        MaterialPageRoute(builder: (context) => ResultsPage()),
       );
       
       //name=basenameWithoutExtension(fileForName.path);
