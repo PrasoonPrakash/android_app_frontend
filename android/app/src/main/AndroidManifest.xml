@@ -4,10 +4,12 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <!-- Optional: Add this permission if you want to save your recordings in public folders -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="aanchal_ai"
         android:name="${applicationName}"
-        android:icon="@mipmap/aanchalai_logo">
+        android:icon="@mipmap/aanchalai_logo"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:exported="true"

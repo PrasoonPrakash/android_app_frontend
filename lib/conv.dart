@@ -138,7 +138,7 @@ class _SpeechRecordPageState extends State<SpeechRecordPage> {
                     _uploadFile(recordingPath);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoadingPage()),
+                      MaterialPageRoute(builder: (context) => ResultsPage()),
                     );
                   }
                 },
