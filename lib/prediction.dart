@@ -26,11 +26,11 @@ class _ResultsPageState extends State<ResultsPage> {
   Future<void> _downloadCsv() async {
     try {
       final url = Uri.parse(
-          'http://10.222.76.205:6000/download_csv'); // Change to your Flask server URL
+          'http://10.237.23.14:6000/download_csv'); // Change to your Flask server URL
       final response = await http.get(url);
 
       // if (response.statusCode == 200) {
-      final directory = "/sdcard/Download/csvFiles/";
+      final directory = "/sdcard/Download/";
       //   // var fileName = "${name}_hindi.txt";
       String savePath="$directory${name}_data_nooneshot.csv";
       //   await file.writeAsBytes(response.bodyBytes);
@@ -92,7 +92,7 @@ class _ResultsPageState extends State<ResultsPage> {
   Future<void> _uploadCsv(String csvPath) async {
     prediction = null;
     var request = http.MultipartRequest(
-        'POST', Uri.parse('http://10.222.76.205:6000/uploadCsvAndPredict'));
+        'POST', Uri.parse('http://10.237.23.14:6000/uploadCsvAndPredict'));
     request.files.add(await http.MultipartFile.fromPath('file', csvPath));
     var response = await request.send();
     if (response.statusCode == 200) {
@@ -115,7 +115,7 @@ class _ResultsPageState extends State<ResultsPage> {
   }
 
   Future<void> _uploadCSVfile() async {
-    final path = "/sdcard/Download/csvFiles/";
+    final path = "/sdcard/Download/";
     final dictToSave = Directory(path);
     if (!await dictToSave.exists()) {
       await dictToSave.create(recursive: true);
@@ -191,7 +191,7 @@ class _ResultsPageState extends State<ResultsPage> {
             ElevatedButton(
                 onPressed: () async {
                   final response = await http
-                      .get(Uri.parse('http://10.222.76.205:6000/hindi'));
+                      .get(Uri.parse('http://10.237.23.14:6000/hindi'));
                   final decoded =
                       json.decode(response.body) as Map<String, dynamic>;
                   setState(() {
@@ -239,7 +239,7 @@ class _ResultsPageState extends State<ResultsPage> {
             ElevatedButton(
               onPressed: () async {
                 final response = await http
-                    .get(Uri.parse('http://10.222.76.205:6000/english'));
+                    .get(Uri.parse('http://10.237.23.14:6000/english'));
                 final decoded =
                     json.decode(response.body) as Map<String, dynamic>;
                 setState(() {
