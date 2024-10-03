@@ -38,7 +38,7 @@ class _LoadingPageState extends State<LoadingPage> {
         );
         _timer?.cancel();
         final nameVar =
-            await http.get(Uri.parse('http://10.222.76.205:6000/name'));
+            await http.get(Uri.parse('http://10.237.23.14:6000/name'));
         final decoded = json.decode(nameVar.body) as Map<String, dynamic>;
         setState(() {
           name = decoded["name"];

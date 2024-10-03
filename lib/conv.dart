@@ -54,7 +54,7 @@ class _SpeechRecordPageState extends State<SpeechRecordPage> {
   Future<void> _uploadFile(String? filePath) async {
     answer=null;
     var request = http.MultipartRequest(
-        'POST', Uri.parse('http://10.222.76.205:6000/upload'));
+        'POST', Uri.parse('http://10.237.23.14:6000/upload'));
     request.files.add(await http.MultipartFile.fromPath('file', filePath!));
     var response = await request.send();
     if (response.statusCode == 200) {
